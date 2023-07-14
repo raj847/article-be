@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "2caf9541-6f9a-4f01-9d3c-ab9a5ac1afe1",
+		"name": "Article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16407134"
+	},
+	"item": [
+		{
+			"name": "create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\r\n    \"content\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\r\n    \"category\":\"abc\",\r\n    \"status\":\"publish\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1323/article",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"article"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\r\n    \"content\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\r\n    \"category\":\"abc\",\r\n    \"status\":\"publish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/article",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"article"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 09:39:15 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "324"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\n    \"category\": \"abc\",\n    \"status\": \"publish\"\n}"
+				},
+				{
+					"name": "error create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"\",\r\n    \"content\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\r\n    \"category\":\"ab\",\r\n    \"status\":\"publish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/article",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"article"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 09:39:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "175"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"message\": \"The title field is empty\",\n            \"code\": \"BAD_REQUEST\",\n            \"field\": \"title\"\n        },\n        {\n            \"message\": \"The category field is not valid\",\n            \"code\": \"BAD_REQUEST\",\n            \"field\": \"category\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "read post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1323/article/3/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"article",
+						"3",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success read",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/article/3/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"article",
+								"3",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 09:43:53 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "977"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"title\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit3\",\n        \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\n        \"category\": \"abc\",\n        \"status\": \"publish\"\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit4\",\n        \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\n        \"category\": \"abc\",\n        \"status\": \"publish\"\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit5\",\n        \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\n        \"category\": \"abc\",\n        \"status\": \"publish\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "update post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit updated\",\r\n    \"content\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\r\n    \"category\":\"abc\",\r\n    \"status\":\"draft\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1323/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit updated\",\r\n    \"content\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\r\n    \"category\":\"abc\",\r\n    \"status\":\"draft\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/article/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"article",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 09:45:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "330"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit updated\",\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis venenatis sapien quis tristique. Integer vitae tortor dapibus, malesuada nulla vel, malesuada felis. Ut eget eros feugiat mauris.\",\n    \"category\": \"abc\",\n    \"status\": \"draft\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1323/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/article/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"article",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 09:46:33 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Post has been deleted\"\n}"
+				}
+			]
+		}
+	]
+}
